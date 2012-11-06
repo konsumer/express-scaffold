@@ -8,6 +8,7 @@
     "ejs": "*",
     "ejs-locals": "*",
     "less": "*",
+    "coffee-script": "*",
     "connect-flash": "*",
     "connect-assets": "*",
     "mailgun":"*",
