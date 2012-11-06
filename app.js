@@ -37,6 +37,7 @@ app.configure(function(){
   app.use(function(req,res,next){
     app.locals.flash = req.flash();
     app.locals.title = config.title;
+    app.locals.analytics_id = config.analytics_id;
     next();
   });
   app.use(app.router);
