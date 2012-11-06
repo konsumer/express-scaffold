@@ -6,7 +6,8 @@ module.exports={
       "public": "YOURS",
       "private": "YOURS"
     },
-    "mailgun": "YOURS", // from mailgun: free low-volume outgoing mail!
+    // from mailgun: free low-volume outgoing mail!
+    "mailgun": process.env.MAILGUN_API_KEY || "YOURS",
     "admin_email": "YOURS",
     "session":"YOUR SECRET",
     "database":{ // local, for dev
