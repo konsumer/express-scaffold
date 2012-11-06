@@ -1,5 +1,5 @@
 module.exports={
-	"title": "App Title",
+    "title": process.env.APP_TITLE || "App Title",
     // from google
     "analytics_id": process.env.GOOGLE_ANALYTICS || "UA-XXXXXXX-1",
     "localport" : process.env.VCAP_APP_PORT || 3000,
@@ -12,7 +12,7 @@ module.exports={
     "admin_email": process.env.ADMIN_EMAIL || "YOURS",
     "session": process.env.SESSION_KEY || "YOUR SECRET",
     "database":{ // local, for dev
-    	"dbname": "YOURS",
+        "dbname": "YOURS",
         "host": "YOURS",
         "port": 27017,
         "username": "YOURS",
