@@ -53,6 +53,14 @@ app.get('/privacy', function(req, res){
   res.render('privacy');
 });
 
+app.get('/about', function(req, res){
+  res.render('about');
+});
+
+app.get('/create', function(req, res){
+  res.render('create');
+});
+
 
 app.get('/contact', function(req, res){
   var recaptcha = new Recaptcha(config.recaptcha.public, config.recaptcha.private);
