@@ -3,6 +3,8 @@
 <form method="POST">
   <fieldset>
     <legend>Contact Us</legend>
+    <p class="lead">Worried about yer digital identity, or spam?</p>
+    <p>Check out our <a href="/privacy">privacy statement</a>. We think you will like it.</p>
 
     <div class="control-group">
       <label class="control-label" for="name">Name</label>
@@ -16,7 +18,7 @@
 
     <div class="control-group">
       <label class="control-label" for="message">Message</label>
-      <div class="control"><textarea required class="input-block-level" rows="6" name="message" id="message"><%= vals.message %></textarea></div>
+      <div class="control"><textarea required class="input-block-level" rows="6" placeholder="Wow, you guys are rad. I want that rad for myself." name="message" id="message"><%= vals.message %></textarea></div>
     </div>
     
     <div class="control-group">
@@ -26,7 +28,7 @@
 
     <div class="control-group">
       <div class="controls">
-        <button class="btn btn-primary"><i class="icon-envelope"></i> contact</button>
+        <button class="btn btn-primary"><i class="icon-envelope"></i> Say Hi</button>
       </div>
     </div>
   </fieldset>

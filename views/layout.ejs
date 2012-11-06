@@ -1,56 +1,50 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><%= title %></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <%- css('site') %>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>ancient</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <div class="navbar-wrapper">
-          <div class="navbar navbar-inverse">
-            <div class="navbar-inner">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                menu
-              </a>
-              <a class="brand" href="/"><img height="20" width="20" src="/favicon.ico" /><%= title %></a>
-              <div class="nav-collapse collapse">
-                <ul class="nav">
-                  <li><a href="/contact">Contact</a></li>
-                </ul>
-              </div>
-            </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="David Konsumer <konsumer@jetboystudio.com>">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome-ie7.css" rel="stylesheet">
+    <link href="/css/site.css" rel="stylesheet">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>ancient</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="container navbar-wrapper">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            menu
+          </a>
+          <a class="brand" href="/"><%= title %></a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/contact">Contact</a></li>
+            </ul>
           </div>
         </div>
+      </div>
+    </div>
 
-        <section class="container">
-            <%- include flash -%>
-            <%- body -%>
-        </section>
-        
-        <footer class="container">
-            &copy; 2012 <%= title %>
-        </footer>
+    <% if (req.url == '/'){ %>
+      <%- include carousel -%>
+    <% }else{ %>
+      <img src="/img/backdrop.jpg" />
+    <% } %>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-        <%- js('site') %>
-
-        <script>
-            var _gaq=[['_setAccount','<%= analytics_id %>'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+    <div class="container marketing">
+      <%- include flash -%>
+      <%- body -%>
+      <div id="footer" class="container">&copy; 2012 <%= title %></div>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+  <script src="/js/site.js"></script>
+  </body>
 </html>
