@@ -1,0 +1,21 @@
+<% if (typeof flash !== 'undefined') { %>
+
+  <% if (typeof flash.error !== 'undefined') { %>
+    <% for (e in flash.error){ %>
+      <div class="alert alert-error"><%= flash.error[e] %><button type="button" class="close" data-dismiss="alert">×</button></div>
+    <% } %>
+  <% } %>
+
+  <% if (typeof flash.info !== 'undefined') { %>
+    <% for (e in flash.info){ %>
+      <div class="alert alert.info"><%= flash.info[e] %><button type="button" class="close" data-dismiss="alert">×</button></div>
+    <% } %>
+  <% } %>
+
+  <% if (typeof flash.success !== 'undefined') { %>
+    <% for (e in flash.success){ %>
+      <div class="alert alert.success"><%= flash.success[e] %><button type="button" class="close" data-dismiss="alert">×</button></div>
+    <% } %>
+  <% } %>
+
+<% } %>
