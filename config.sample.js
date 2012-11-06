@@ -1,5 +1,5 @@
 module.exports={
-    "title": "App Title",
+    "title": process.env.APP_TITLE || "App Title",
     // from google
     "analytics_id": process.env.GOOGLE_ANALYTICS || "UA-XXXXXXX-1",
     "localport" : process.env.VCAP_APP_PORT || 3000,
