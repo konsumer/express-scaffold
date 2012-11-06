@@ -1,15 +1,16 @@
 module.exports={
 	"title": "App Title",
-    "analytics_id": "UA-XXXXXXX-1", // from google
+    // from google
+    "analytics_id": process.env.GOOGLE_ANALYTICS || "UA-XXXXXXX-1",
     "localport" : process.env.VCAP_APP_PORT || 3000,
     "recaptcha": {
-      "public": "YOURS",
-      "private": "YOURS"
+      "public": process.env.RECAPTCHA_PUB || "YOURS",
+      "private": process.env.RECAPTCHA_PRIV || "YOURS"
     },
     // from mailgun: free low-volume outgoing mail!
     "mailgun": process.env.MAILGUN_API_KEY || "YOURS",
-    "admin_email": "YOURS",
-    "session":"YOUR SECRET",
+    "admin_email": process.env.ADMIN_EMAIL || "YOURS",
+    "session": process.env.SESSION_KEY || "YOUR SECRET",
     "database":{ // local, for dev
     	"dbname": "YOURS",
         "host": "YOURS",
