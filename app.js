@@ -78,7 +78,7 @@ app.post('/contact', function(req, res){
   recaptcha.verify(function(success, error_code) {
     if (success) {
       mg.sendText(req.body.email,
-         [process.env.npm_package_config_admin_email],
+         [config.admin_email],
          config.title + ' Feedback',
          req.body.message,
          function(err) { err && console.log(err) });
